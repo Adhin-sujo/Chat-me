@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta name="viewport" content="scale=1,width=device-width" />
+    <style>
+        button, input[type=text]{
+            border: 3px solid black;
+            background-color: white;
+            padding: 10px 20px;
+        }
+        button{
+            cursor: pointer;
+            border-radius: ;
+        }
+        #sub{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <input placeholder="Write just numbers dont write units" type="text" id="text">
+    <button id="copy">Set</button>
+    <br><br>
+    <button id="add">+</button>
+    <button id="sub">-</button>
+    <p id="head">Click + or - to resize this text</p>
+    <script>
+    var y = document.getElementById("text");
+    var copy = document.getElementById("copy");
+    var add = document.getElementById("add");
+    var sub = document.getElementById("sub");
+    var head = document.getElementById("head");
+    txt = 16;
+    add.onclick = function(){
+        txt += 4;
+        head.style.fontSize = txt + "px";
+        y.value = txt + "px";
+    }
+    sub.onclick = function(){
+        txt -= 4;
+        head.style.fontSize = txt + "px";
+        y.value = txt + "px";
+    }
+    copy.onclick = function() {
+        head.style.fontSize = y.value + "px";
+        y.value += "px";
+    }
+    </script>
+</body>
+</html>
